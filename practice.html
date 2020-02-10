@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+        main{
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            flex-direction:column;
+        }
+        .frame{
+            max-width: 500px;
+            height: auto;
+            padding: 50px;
+            box-shadow: 1px 1px 15px 3px #000;
+            background-color: #fff;
+        }
+        label{
+            display: block;
+            margin-top: 30px;
+            font-size: 1.5rem;
+        }
+        input{
+            width: 400px;
+            padding: 10px 0;
+            outline: none;
+            background-color: #f1f1f1;
+            font-size: 1.5rem;
+        }
+        button{
+            border: none;
+            border-radius: 10px;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            box-shadow: 1px 1px 5px 1px #000;
+            margin-top: 20px;
+            outline: none;
+            cursor: pointer;
+        }
+        p{
+            font-size: 30px;
+            width: 320px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+    <h1>Discount Calculator</h1>
+    <div class="frame">
+        <label>Initial Amount</label>
+        <input type="text" id="bill_amount">
+        <br>
+        <label>Percent of Discount</label>
+        <input type="text" id="tip_perc">
+        <br>
+            <p id="total_billed"></p>
+        <br>
+        <button onclick="Calc()">Calculate</button>
+    </div>
+</main>
+
+
+
+    <script>
+        const Calc = () =>{
+            let amount = document.getElementById("bill_amount").value;
+
+            let percent = document.getElementById("tip_perc").value;
+
+            let tip = amount*(percent/100);
+
+            let total = amount - tip;
+
+            document.getElementById("total_billed").innerHTML = "After Discount Total Bill " + total + "TK";
+        }
+    </script>
+</body>
+</html>
